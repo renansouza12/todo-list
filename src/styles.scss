@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Kavivanar&display=swap');
+:root{
+    --primary-color:#f5f5f5;
+    --secondary-color:#e9e8e9;
+    --Black:#000000;
+    --Gray:#7A7A7A;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Kavivanar", cursive;
+}
