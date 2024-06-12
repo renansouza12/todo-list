@@ -1,0 +1,36 @@
+.todo_add_container{
+    height: 100%;
+    width: 40vw;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    .todo_add_image{
+        height: 45vh;
+        width: 20vw;
+        position: relative;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        h1{
+            position: absolute;
+            bottom: -10%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: var(--secondary-color);
+        }
+    }
+    button{
+        width: 45%;
+        background-color: var(--Black);
+        color: var(--White);
+        padding: 10px 0;
+        font-size: 14px;
+        letter-spacing: 3px;
+        text-transform: capitalize;
+    }
+}
