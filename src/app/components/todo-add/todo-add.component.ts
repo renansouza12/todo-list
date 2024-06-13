@@ -9,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './todo-add.component.scss'
 })
 export class TodoAddComponent {
+  btnText!:string;
 
+  addTask():void{
+   this.btnText = "active"; 
+   
+  }
 }

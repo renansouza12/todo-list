@@ -8,8 +8,8 @@
     gap: 3rem;
 
     .todo_add_image{
-        height: 45vh;
-        width: 20vw;
+        height: 40vh;
+        width: 18vw;
         position: relative;
         img{
             height: 100%;
@@ -32,5 +32,10 @@
         font-size: 14px;
         letter-spacing: 3px;
         text-transform: capitalize;
+    }
+    button{
+        p.active{
+            background-color: red;
+        }
     }
 }
