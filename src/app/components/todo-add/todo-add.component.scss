@@ -8,8 +8,8 @@
     gap: 3rem;
 
     .todo_add_image{
-        height: 40vh;
-        width: 18vw;
+        height: 200px;
+        width: 200px;
         position: relative;
         img{
             height: 100%;
@@ -22,6 +22,8 @@
             left: 50%;
             transform: translate(-50%,-50%);
             color: var(--secondary-color);
+            text-align: center;
+            width: 100%;
         }
     }
     button{
@@ -29,13 +31,26 @@
         background-color: var(--Black);
         color: var(--White);
         padding: 10px 0;
-        font-size: 14px;
-        letter-spacing: 3px;
-        text-transform: capitalize;
+    
+        p{
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: capitalize;
+        }
     }
-    button{
-        p.active{
-            background-color: red;
+}
+@media (max-width:720px) {
+    .todo_add_container{
+        height: 50vh;
+        width: 100vw;    
+
+        gap: 10px;
+
+
+
+        button{
+            width: 150px;
+            padding: 5px 0;
         }
     }
 }

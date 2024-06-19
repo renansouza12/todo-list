@@ -1,5 +1,5 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-todo-add',
@@ -8,11 +8,17 @@ import { Component } from '@angular/core';
   templateUrl: './todo-add.component.html',
   styleUrl: './todo-add.component.scss'
 })
-export class TodoAddComponent {
-  btnText!:string;
+export class TodoAddComponent{
+  btnClass:string = "unactive";
 
   addTask():void{
-   this.btnText = "active"; 
-   
+   this.btnClass = "active"; 
+   this.btnTextAnimation();
+  }
+
+  private btnTextAnimation():void{
+  
+    console.log("clicked");
+    
   }
 }
