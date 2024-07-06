@@ -1,0 +1,10 @@
+<div class="todo_input_container">
+    <div class="todo_title">
+        <h1>{{title}}</h1>
+        <form (submit)="next()">
+            <input type="text" [(ngModel)]="title" [ngModelOptions]="{standalone: true}" maxlength="15">
+            <button><i class="ph ph-arrow-circle-right"></i></button>
+        </form>
+       
+    </div>    
+</div>
