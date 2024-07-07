@@ -29,8 +29,10 @@ button{
     background-color: transparent;
     cursor: pointer;
 }
-input{
+input, textarea{
     outline: none;
     border: none;
     background-color: transparent;
+    resize: none;
 }
+

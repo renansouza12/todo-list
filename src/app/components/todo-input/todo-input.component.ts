@@ -11,10 +11,17 @@ import { FormsModule } from '@angular/forms';
 export class TodoInputComponent {
 
   title:string = "title";
+  titleStep:boolean = true;
+  descStep:boolean = false;
 
   next():void{
     console.log("clicked", this.title);
-    
+    this.titleStep = false;
+    this.descStep = true;
+  }
+  previous():void{
+    this.titleStep = true;
+    this.descStep = false;
   }
 
 }
