@@ -1,5 +1,5 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component} from '@angular/core';
+import { Component, EventEmitter, Output, } from '@angular/core';
 
 @Component({
   selector: 'app-todo-add',
@@ -9,16 +9,10 @@ import { Component} from '@angular/core';
   styleUrl: './todo-add.component.scss'
 })
 export class TodoAddComponent{
-  btnClass:string = "unactive";
+
+ @Output() btnMenu = new EventEmitter<string>();
 
   addTask():void{
-   this.btnClass = "active"; 
-   this.btnTextAnimation();
-  }
-
-  private btnTextAnimation():void{
-  
-    console.log("clicked");
-    
+    this.btnMenu.emit();
   }
 }
