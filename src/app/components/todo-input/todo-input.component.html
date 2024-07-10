@@ -1,21 +1,21 @@
 <div class="todo_input_container" *ngIf="displayMenu">
     <div class="todo_title" *ngIf="titleStep">
-        <h1>{{title}}</h1>
+        <h1 [ngClass]="anim">{{title}}</h1>
         <form (submit)="next()">
-            <input type="text" [(ngModel)]="title" [ngModelOptions]="{standalone: true}" maxlength="15">
-            <button><i class="ph ph-arrow-circle-right"></i></button>
+            <input [ngClass]="anim" type="text" [(ngModel)]="title" [ngModelOptions]="{standalone: true}" maxlength="15">
+            <button [ngClass]="anim" ><i class="ph ph-arrow-circle-right"></i></button>
         </form>
     </div>    
     <div class="todo_description" *ngIf="descStep">
-        <h2>Description</h2>
+        <h2 [ngClass]="animDesc">Description</h2>
         <div class="input_description_container">
-            <p>Write Below <i class="ph ph-arrow-arc-right"></i> </p>
-            <textarea placeholder="..." [(ngModel)]="desc"></textarea>
+            <p [ngClass]="animDesc">Write Below <i class="ph ph-arrow-arc-right"></i> </p>
+            <textarea [ngClass]="animDesc"  placeholder="..." [(ngModel)]="desc"></textarea>
         </div>
         <div class="todo_description_buttons">
-            <button (click)="previous()" ><i class="ph ph-caret-left"></i></button>
-            <button (click)="done()">Done <i class="ph ph-check"></i></button>
+            <button (click)="previous()" [ngClass]="animDesc"><i class="ph ph-caret-left"></i></button>
+            <button (click)="done()" [ngClass]="animDesc">Done <i class="ph ph-check"></i></button>
         </div>
     </div>
-    <button class="btn_close" (click)="close()"><i class="ph ph-x-square"></i></button>
+    <button class="btn_close" (click)="close()" [ngClass]="animDesc"><i class="ph ph-x-square"></i></button>
 </div>

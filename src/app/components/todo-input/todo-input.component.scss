@@ -91,4 +91,55 @@
         font-size: 1.2rem;
 
     }
+
+    .item{
+        animation: disappear .2s forwards;
+    }
+    .appear{
+        animation: appear .2s forwards;
+    }
+    .desc{
+        animation: appearDesc .2s forwards;
+    }
+}
+
+@keyframes disappear {
+    0%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(40px);
+    }
+}
+@keyframes appear {
+    0%{
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes appearDesc {
+    0%{
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
