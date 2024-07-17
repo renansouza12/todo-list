@@ -19,4 +19,7 @@ export class AppComponent {
   menu():void{
     this.displayMenu = !this.displayMenu;
   }
+  close():void{
+    this.displayMenu = false;
+  }
 }

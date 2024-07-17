@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output,EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 @Component({
@@ -13,14 +13,13 @@ export class TodoInputComponent {
   desc!:string;
   titleStep:boolean = true;
   descStep!:boolean;
-  @Input() displayMenu:boolean = false;
   anim!:string;
   animDesc!:string;
 
+  @Input() displayMenu:boolean = false;
+  @Output() eventClose = new EventEmitter<string>();
 
   next():void{
-    console.log("clicked", this.title);
-   
     this.anim = "item";
 
     setTimeout(() => {
@@ -33,16 +32,14 @@ export class TodoInputComponent {
   }
   previous():void{
     this.anim = "item";
-      setTimeout(() => {
-         this.descStep = false;
-         this.titleStep = true;
-         this.anim = "appear";
-      }, 2000);
+    this.descStep = false;
+    this.titleStep = true;
+    this.anim = "appear";
   }
   done():void{
     console.log(this.desc);
   }
   close():void{
-    this.displayMenu = false;
+    this.eventClose.emit();
   }
 }

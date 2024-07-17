@@ -1,7 +1,5 @@
 <router-outlet />
-<div class="todo_container">
-    <app-todo-add (btnMenu)="menu()"/>
-    <app-todo-list/>
-    <h1>時間過得真快</h1>
-    <app-todo-input [displayMenu]="displayMenu"  />
-</div>
+<app-todo-add (btnMenu)="menu()" />
+<app-todo-list />
+<h1>時間過得真快</h1>
+<app-todo-input *ngIf="displayMenu" (eventClose)="close()"/>

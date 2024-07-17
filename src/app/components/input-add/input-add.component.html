@@ -1,0 +1,7 @@
+<div class="title">
+  <h1>{{title}}</h1>
+    <form class="input_title_container" (submit)="next()">
+      <input  type="text" [(ngModel)]="title"  [ngModelOptions]="{standalone: true}"  placeholder="type here">
+      <button type="submit"><i class="ph ph-arrow-bend-double-up-left"></i></button>
+    </form>
+ </div>

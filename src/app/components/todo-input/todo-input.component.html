@@ -1,21 +1,37 @@
-<div class="todo_input_container" *ngIf="displayMenu">
-    <div class="todo_title" *ngIf="titleStep">
-        <h1 [ngClass]="anim">{{title}}</h1>
-        <form (submit)="next()">
-            <input [ngClass]="anim" type="text" [(ngModel)]="title" [ngModelOptions]="{standalone: true}" maxlength="15">
-            <button [ngClass]="anim" ><i class="ph ph-arrow-circle-right"></i></button>
-        </form>
-    </div>    
-    <div class="todo_description" *ngIf="descStep">
-        <h2 [ngClass]="animDesc">Description</h2>
-        <div class="input_description_container">
-            <p [ngClass]="animDesc">Write Below <i class="ph ph-arrow-arc-right"></i> </p>
-            <textarea [ngClass]="animDesc"  placeholder="..." [(ngModel)]="desc"></textarea>
-        </div>
-        <div class="todo_description_buttons">
-            <button (click)="previous()" [ngClass]="animDesc"><i class="ph ph-caret-left"></i></button>
-            <button (click)="done()" [ngClass]="animDesc">Done <i class="ph ph-check"></i></button>
-        </div>
-    </div>
-    <button class="btn_close" (click)="close()" [ngClass]="animDesc"><i class="ph ph-x-square"></i></button>
+<div class="todo_title" *ngIf="titleStep">
+  <h1 [ngClass]="anim">{{ title }}</h1>
+  <form (submit)="next()">
+    <input
+      [ngClass]="anim"
+      type="text"
+      [(ngModel)]="title"
+      [ngModelOptions]="{ standalone: true }"
+      maxlength="15"
+    />
+    <button [ngClass]="anim"><i class="ph ph-arrow-circle-right"></i></button>
+  </form>
 </div>
+<div class="todo_description" *ngIf="descStep">
+  <h2 [ngClass]="animDesc">Description</h2>
+  <div class="input_description_container">
+    <p [ngClass]="animDesc">
+      Write Below <i class="ph ph-arrow-arc-right"></i>
+    </p>
+    <textarea
+      [ngClass]="animDesc"
+      placeholder="..."
+      [(ngModel)]="desc"
+    ></textarea>
+  </div>
+  <div class="todo_description_buttons">
+    <button (click)="previous()" [ngClass]="animDesc">
+      <i class="ph ph-caret-left"></i>
+    </button>
+    <button (click)="done()" [ngClass]="animDesc">
+      Done <i class="ph ph-check"></i>
+    </button>
+  </div>
+</div>
+<button class="btn_close" (click)="close()" [ngClass]="animDesc">
+  <i class="ph ph-x-square"></i>
+</button>
