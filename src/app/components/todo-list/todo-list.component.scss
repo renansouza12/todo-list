@@ -16,7 +16,7 @@
     }
 }
 @media (max-width:720px) {
-    .todo_list_container{
+    :host{
         height: 50vh;
         width: 100vw;    
     }

@@ -18,7 +18,7 @@
         
         
         h1 {
-            font-size: 2vw;
+            font-size: 20px;
         }
 
         form{
@@ -100,6 +100,14 @@
     }
     .desc{
         animation: appearDesc .2s forwards;
+    }
+}
+
+@media (max-width:720px) {
+    :host{
+        left: 50%;
+        bottom: 0%;
+        transform: translate(-50%,-50%);
     }
 }
 
