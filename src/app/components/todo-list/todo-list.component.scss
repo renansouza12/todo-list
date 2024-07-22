@@ -8,12 +8,21 @@
     gap: 3rem;
     background-color: var(--secondary-color);
     position: relative;
-    p{
-        border-bottom: 1px solid var(--Black);
-        position: absolute;
-        top: 10%;
-        right: 5%;
+    .data{
+        p{
+            border-bottom: 1px solid var(--Black);
+            position: absolute;
+            top: 10%;
+            right: 5%;
+        }
     }
+    .cards{
+        height: 100%;
+        width: 100%;
+        padding-left: 4rem;
+        margin-top: 3rem;
+    }
+   
 }
 @media (max-width:720px) {
     :host{
