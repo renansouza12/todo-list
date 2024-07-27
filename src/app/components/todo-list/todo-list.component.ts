@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { TodoCardComponent } from '../todo-card/todo-card.component';
+import { SharedService } from '../../services/shared.service';
 @Component({
   selector: 'app-todo-list',
   standalone: true,
@@ -10,4 +11,8 @@ import { TodoCardComponent } from '../todo-card/todo-card.component';
 })
 export class TodoListComponent {
   today:number = Date.now();
+
+  constructor(private service:SharedService){}
+
+  informations:{title:string,description:string}[] = [];
 }
