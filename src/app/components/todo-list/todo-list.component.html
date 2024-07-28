@@ -2,5 +2,10 @@
   <p>{{ today | date : "MMMM - dd/MM/yyyy" }}</p>
 </div>
 <div class="cards">
-  <app-todo-card/>
+  @for (item of informations ; track item.id) {
+    <app-todo-card
+    [title]="item.title"
+    [description]="item.description"
+    />
+  }
 </div>
