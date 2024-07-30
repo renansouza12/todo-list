@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-todo-card',
@@ -9,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class TodoCardComponent {
 
+@Input() title!:string;
+@Input() description!:string;
 }

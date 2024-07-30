@@ -10,7 +10,7 @@ import { SharedService } from '../../services/shared.service';
   styleUrl: './todo-input.component.scss'
 })
 export class TodoInputComponent {
-  title:string = "title";
+  @Input() title:string = "title";
   desc!:string;
   titleStep:boolean = true;
   descStep!:boolean;
@@ -19,6 +19,7 @@ export class TodoInputComponent {
 
   @Input() displayMenu:boolean = false;
   @Output() eventClose = new EventEmitter<string>();
+  @Input() description!:string;
 
   constructor(private service:SharedService){}
 
@@ -40,8 +41,8 @@ export class TodoInputComponent {
     this.anim = "appear";
   }
   done():void{
-    console.log("title " + this.title, "description " + this.desc);
-    this.service.updateTitle(this.title,this.desc);
+    console.log("t "+ this.title, "D: " + this.desc);
+    
   }
   close():void{
     this.eventClose.emit();

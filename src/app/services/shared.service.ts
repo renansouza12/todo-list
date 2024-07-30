@@ -6,14 +6,11 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SharedService {
 
-  private title = new BehaviorSubject<string>("");
-  private description = new BehaviorSubject<string>("");
+  private title = new BehaviorSubject<string>('');
   currentTitle = this.title.asObservable();
-  currentDescription = this.description.asObservable();
 
-  updateTitle(title:string,description:string):void{
-    this.title.next(title);
-    this.description.next(description);
+  updateTitle(title: string):void{
+    this.title.next(title); 
   }
 
 }
