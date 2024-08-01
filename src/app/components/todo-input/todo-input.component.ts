@@ -2,7 +2,6 @@ import { Component, Input, Output,EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SharedService } from '../../services/shared.service';
-import { Information } from '../models/information.model';
 @Component({
   selector: 'app-todo-input',
   standalone: true,
@@ -20,7 +19,7 @@ export class TodoInputComponent {
 
   @Input() displayMenu:boolean = false;
   @Output() eventClose = new EventEmitter<string>();
-  @Input() description!:string;
+  @Output() btnDone = new EventEmitter<string>();
 
   constructor(private service:SharedService){}
 
@@ -42,8 +41,9 @@ export class TodoInputComponent {
     this.anim = "appear";
   }
   done():void{
-    this.service.updateTitle(this.title);
-    console.log("t "+ this.title, "D: " + this.desc);
+    this.service.updateInformations(this.title,this.desc);
+    this.service.emitDoneEvent();
+    this.btnDone.emit();
   }
   close():void{
     this.eventClose.emit();

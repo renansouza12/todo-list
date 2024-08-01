@@ -13,29 +13,27 @@ import { SharedService } from '../../services/shared.service';
 })
 export class TodoListComponent {
   today:number = Date.now();
-  title: string = '';
+  id!:number;
+  title!: string;
+  description!:string;
 
-  informations: Information[] = [
-    {
-      id: 1,
-      title: "title here",
-      description: 'opa'
-    }
-  ];
+
+  informations: Information[] = [];
 
   constructor(private service: SharedService) { }
 
   ngOnInit(): void {
-    this.service.currentTitle.subscribe(title => {
-      this.title = title;
-      this.performActionWithTitle(); 
-
-    });
+    this.service.currentTitle.subscribe(title => this.title = title);
+    this.service.currentDescription.subscribe(desc =>this.description = desc);
+    this.service.doneEvent.subscribe(()=>{this.addInformation(this.title,this.description)});
   }
 
-  performActionWithTitle(): void {
-    this.informations[0].title = this.title;
-    console.log('Performing action with title:', this.title);
+  addInformation(title:string,description:string){
+    if (title && description) {
+      const newItem = { title, description };
+      this.informations.push(newItem);
+      console.log(this.informations);
+    }
   }
 }
 
