@@ -11,7 +11,7 @@
     h1{
         position: absolute;
         top: 50%;
-        left: 51%;
+        left: 50%;
         transform: translate(-50%,-50%);
         width: 8%;
         font-weight: 400;
@@ -30,6 +30,13 @@
             width: 100%;
             display: flex;
             justify-content: center;
+        }
+    }
+}
+@media (max-width:320px){
+    :host{
+        h1{
+            font-size: 8vw;
         }
     }
 }

@@ -31,7 +31,6 @@
         background-color: var(--Black);
         color: var(--White);
         padding: 10px 0;
-    
         p{
             font-size: 12px;
             letter-spacing: 3px;
@@ -51,6 +50,17 @@
         button{
             width: 150px;
             padding: 5px 0;
+        }
+    }
+}
+@media (max-width:320px) {
+    :host{
+        .todo_add_image{
+           width: 50vw;
+        }
+
+        button{
+            width: 50%;
         }
     }
 }
