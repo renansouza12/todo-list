@@ -4,6 +4,7 @@ import { TodoAddComponent } from './components/todo-add/todo-add.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoInputComponent } from './components/todo-input/todo-input.component';
 import { CommonModule } from '@angular/common';
+import { timeStamp } from 'node:console';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,9 @@ export class AppComponent {
     this.displayMenu = !this.displayMenu;
   }
   close():void{
+    this.displayMenu = false;
+  }
+  done():void{
     this.displayMenu = false;
   }
 }

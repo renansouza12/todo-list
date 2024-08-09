@@ -43,6 +43,8 @@ export class TodoInputComponent {
   done():void{
     this.service.updateInformations(this.title,this.desc);
     this.service.emitDoneEvent();
+    this.title = "";
+    this.desc = "";
     this.btnDone.emit();
   }
   close():void{

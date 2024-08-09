@@ -12,6 +12,9 @@
             li{
                 font-size: 15px;
                 color: var(--Gray);
+                &.isChecked{
+                    text-decoration: line-through;
+                }
             }
         }
     }

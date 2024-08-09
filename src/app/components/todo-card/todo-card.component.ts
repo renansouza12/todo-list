@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input,Output,EventEmitter, input } from '@angular/core';
 
 @Component({
   selector: 'app-todo-card',
@@ -11,4 +11,9 @@ export class TodoCardComponent {
 
 @Input() title!:string;
 @Input() description!:string;
+@Input() check!:string;
+
+  checked():void{
+    this.check = "isChecked";
+  }
 }
