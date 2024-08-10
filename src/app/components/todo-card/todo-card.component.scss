@@ -12,7 +12,7 @@
             li{
                 font-size: 15px;
                 color: var(--Gray);
-                &.isChecked{
+                &.checked{
                     text-decoration: line-through;
                 }
             }

@@ -3,10 +3,10 @@
 </div>
 <div class="card_description">
     <ul>
-        <li>{{description}}</li>
+        <li [ngClass]="{'checked':isChecked}" >{{description}}</li>
     </ul>
 </div>
 <label class="checkbox" >
-    <input type="checkbox" (click)="checked()">
+    <input type="checkbox" (click)="toggleChecked()">
     <i class="pi pi-pencil"></i>
 </label>
