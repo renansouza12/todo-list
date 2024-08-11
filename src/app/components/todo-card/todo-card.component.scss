@@ -58,11 +58,11 @@
             position: absolute;
             top: -30%;
             right: 0%;
-            width: 50%;
+            width: 110%;
             .path {
-                stroke-dasharray: calc(100 * 3.14159265359);
-                stroke-dashoffset: calc(100 * 3.14159265359);
-                animation: draw 2s ease-out forwards 1s;
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 1000;
+                animation: draw 4s forwards;
               
             }
 
