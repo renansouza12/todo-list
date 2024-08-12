@@ -1,11 +1,11 @@
 :host{
     height: 280px;
     width: 250px;
-    border: 1px solid var(--Black);
     position: absolute;
     left: 15%;
     bottom: 35%;
     background-color: var(--secondary-color);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
     .todo_title {
         height: 100%;
@@ -19,13 +19,43 @@
         
         h1 {
             font-size: 20px;
+            position: relative;
+          
         }
 
         form{
-    
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+
+            &::after,  &::before{
+                position: absolute;
+                background-color: var(--Gray);
+            }
+
+            &::after{
+                content: "";
+                height: 1px;
+                width: 25%;
+                top: -10%;
+                left: 3%;
+            }
+
+            &::before{
+                content: "标题";
+                bottom: 0%;
+                left: 5%;
+                background-color: transparent;
+                color: var(--Gray);
+            }
             input {
-                border-bottom: 1px solid var(--Black);
-                padding: 5px;
+                display:flex;
+                justify-content: center;
+                border-bottom: 1px solid var(--Gray);
+                padding: 5px 0px 5px 20px;
+                width: 70%;
             }     
 
             button{
@@ -86,9 +116,43 @@
 
     .btn_close{
         position: absolute;
-        top: 0%;
-        right: 0%;
+        top: 5%;
+        right: 5%;
         font-size: 1.2rem;
+
+        &::after,&::before{
+            position: absolute;
+            content: "";
+            background-color: var(--Gray);
+            height: 1px;
+            width: 50%;
+            right: 20%;
+            rotate:-25deg;
+        }
+        &::after{
+            top: 100%;
+        }
+        &::before{
+            top: 120%;
+        }
+
+        span{
+            position: absolute;
+            font-size: 10px;
+            right: 10%;
+            top:140%;
+
+            &::after{
+                position: absolute;
+                content: "";
+                background-color: var(--Gray);
+                height: 100px;
+                width: 1px;
+                position: absolute;
+                left: -15%;
+                top: -120%;
+            }
+        }
 
     }
 
