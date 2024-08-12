@@ -71,6 +71,11 @@
         flex-direction: column;
         align-items: center;
 
+        h2{
+            color: var(--Black);
+            font-weight: 100;
+        }
+
         .input_description_container{
             padding: 10px 0;
             height: 100%;
@@ -78,15 +83,17 @@
                 width: 100%;
                 font-size: 12px;
                 display: flex;
-                justify-content: flex-end;
+                justify-content: center;
                 position: relative;
+                color: var(--Gray);
+                padding-left: 40px;
 
                 &::after{
                     position: absolute;
                     content: "";
                     height: 1px;
                     width: 50%;
-                    background-color: var(--Black);
+                    background-color: var(--Gray);
                     top: 50%;
                     left: 18%;
                     transform: translate(-50%,-50%);
@@ -94,7 +101,7 @@
             }
 
             textarea{
-                border-bottom: 1px solid var(--Black);
+                border-bottom: 1px solid var(--Gray);
                 height: 80%;
                 width: 100%;
                 padding: 10px;
@@ -105,8 +112,7 @@
             display: flex;
             justify-content: space-between;
             button{
-                background-color: var(--Black);
-                color: var(--White);
+                color: var(--Gray);
                 padding: 5px 1rem;
                 margin: 10px 0;
             }
