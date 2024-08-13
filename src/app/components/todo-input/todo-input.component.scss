@@ -1,4 +1,4 @@
-:host{
+:host {
     height: 280px;
     width: 250px;
     position: absolute;
@@ -15,27 +15,28 @@
         align-items: center;
         justify-content: space-around;
         position: relative;
-        
-        
+
+
         h1 {
             font-size: 20px;
             position: relative;
-          
+
         }
 
-        form{
-            display:flex;
+        form {
+            display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
             width: 100%;
 
-            &::after,  &::before{
+            &::after,
+            &::before {
                 position: absolute;
                 background-color: var(--Gray);
             }
 
-            &::after{
+            &::after {
                 content: "";
                 height: 1px;
                 width: 25%;
@@ -43,43 +44,48 @@
                 left: 3%;
             }
 
-            &::before{
+            &::before {
                 content: "标题";
                 bottom: 0%;
                 left: 5%;
                 background-color: transparent;
                 color: var(--Gray);
             }
+
             input {
-                display:flex;
+                display: flex;
                 justify-content: center;
                 border-bottom: 1px solid var(--Gray);
                 padding: 5px 0px 5px 20px;
                 width: 70%;
-            }     
+            }
 
-            button{
+            button {
                 font-size: 1.2rem;
             }
         }
-       
+
     }
-    .todo_description{
+
+    .todo_description {
         height: 100%;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        position: relative;
 
-        h2{
+        h2 {
             color: var(--Black);
             font-weight: 100;
         }
 
-        .input_description_container{
+        .input_description_container {
             padding: 10px 0;
             height: 100%;
-            p{
+            z-index: 100;
+
+            p {
                 width: 100%;
                 font-size: 12px;
                 display: flex;
@@ -88,7 +94,7 @@
                 color: var(--Gray);
                 padding-left: 40px;
 
-                &::after{
+                &::after {
                     position: absolute;
                     content: "";
                     height: 1px;
@@ -96,59 +102,76 @@
                     background-color: var(--Gray);
                     top: 50%;
                     left: 18%;
-                    transform: translate(-50%,-50%);
+                    transform: translate(-50%, -50%);
                 }
             }
 
-            textarea{
+            textarea {
                 border-bottom: 1px solid var(--Gray);
                 height: 80%;
                 width: 100%;
                 padding: 10px;
             }
         }
-        .todo_description_buttons{
+
+        svg {
+            height: 100%;
+            stroke-dasharray: 3000;
+            stroke-dashoffset: 3000;
+            animation: draw 10s ease forwards;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .todo_description_buttons {
             width: 100%;
             display: flex;
             justify-content: space-between;
-            button{
+
+            button {
                 color: var(--Gray);
                 padding: 5px 1rem;
                 margin: 10px 0;
             }
         }
-     
+
     }
 
-    .btn_close{
+    .btn_close {
         position: absolute;
         top: 5%;
         right: 5%;
         font-size: 1.2rem;
 
-        &::after,&::before{
+        &::after,
+        &::before {
             position: absolute;
             content: "";
             background-color: var(--Gray);
             height: 1px;
             width: 50%;
             right: 20%;
-            rotate:-25deg;
+            rotate: -25deg;
         }
-        &::after{
+
+        &::after {
             top: 100%;
         }
-        &::before{
+
+        &::before {
             top: 120%;
         }
 
-        span{
+        span {
             position: absolute;
             font-size: 10px;
             right: 10%;
-            top:140%;
+            top: 140%;
 
-            &::after{
+            &::after {
                 position: absolute;
                 content: "";
                 background-color: var(--Gray);
@@ -162,62 +185,77 @@
 
     }
 
-    .item{
+    .item {
         animation: disappear .2s forwards;
     }
-    .appear{
+
+    .appear {
         animation: appear .2s forwards;
     }
-    .desc{
+
+    .desc {
         animation: appearDesc .2s forwards;
     }
 }
 
 @media (max-width:720px) {
-    :host{
+    :host {
         left: 50%;
         bottom: 0%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
     }
 }
 
 @keyframes disappear {
-    0%{
+    0% {
         opacity: 1;
         transform: translateX(0px);
     }
-    50%{
+
+    50% {
         opacity: 0.5;
     }
-    100%{
+
+    100% {
         opacity: 0;
         transform: translateX(40px);
     }
 }
+
 @keyframes appear {
-    0%{
+    0% {
         opacity: 0;
         transform: translateX(40px);
     }
-    50%{
+
+    50% {
         opacity: 0.5;
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateX(0px);
     }
 }
 
 @keyframes appearDesc {
-    0%{
+    0% {
         opacity: 0;
         transform: translateX(-40px);
     }
-    50%{
+
+    50% {
         opacity: 0.5;
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateX(0px);
+    }
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
     }
 }

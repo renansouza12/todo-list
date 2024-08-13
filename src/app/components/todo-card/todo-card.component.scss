@@ -13,13 +13,17 @@
             li {
                 font-size: 15px;
                 color: var(--Gray);
+                word-wrap: break-word; 
+                white-space: pre-wrap; 
+                overflow-wrap: break-word;
+                word-break: break-word;
             }
         }
     }
 
     .checkbox {
         position: absolute;
-        top: 50%;
+        top: 13%;
         right: 0%;
         transform: translate(-50%, -50%);
         display: inline-flex;
