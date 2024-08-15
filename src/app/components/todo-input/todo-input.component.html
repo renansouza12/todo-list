@@ -1,27 +1,35 @@
 <div class="todo_title" *ngIf="titleStep">
   <h1 [ngClass]="anim">{{ title }}</h1>
-  <form (submit)="next()">
-    <input [ngClass]="anim" type="text" [(ngModel)]="title" [ngModelOptions]="{ standalone: true }" maxlength="15" />
+  <form [formGroup]="form" (submit)="next()">
+    <input [ngClass]="anim" type="text" [(ngModel)]="title" maxlength="15" formControlName="title" />
+    @if(form.controls.title.invalid){
+    <p>title invalid</p>
+    }
     <button [ngClass]="anim"><i class="ph ph-arrow-circle-right"></i></button>
   </form>
 </div>
-<div class="todo_description" *ngIf="descStep">
+<div   class="todo_description" *ngIf="descStep">
   <h2 [ngClass]="animDesc">{{title}}</h2>
   <div class="input_description_container">
     <p [ngClass]="animDesc">
       Write Below
     </p>
-    <textarea spellcheck="false" [ngClass]="animDesc" placeholder="..." [(ngModel)]="desc"></textarea>
-
-
+    <textarea spellcheck="false" [ngClass]="animDesc" placeholder="..." 
+      formControlName="descritpion"></textarea> // this validation is not working ❗
+    @if(form.controls.description.invalid){
+    <p>description invalid</p>
+    }
   </div>
   <svg width="300" height="986" viewBox="0 0 889 986" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M1 1V15.6722H58.3138V28.3436H1V956.026H17.3754H60.1333V968.697H1V984.703H22.8338V945.355" stroke="#000000"/>
-    <path d="M22.8339 946.022H39.2093V984.036" stroke="#000000"/>
-    <path d="M39.2092 984.036H844.332V944.021H863.437V984.036H888V968.03H828.867V958.693H888V27.6767H831.596V17.006H888V1H864.347V40.3481H847.062V1" stroke="#000000"/>
-    <path d="M847.061 2.33367H41.0287V38.3472H23.7436V1.66675H1" stroke="#000000"/>
-    </svg>
-    
+    <path d="M1 1V15.6722H58.3138V28.3436H1V956.026H17.3754H60.1333V968.697H1V984.703H22.8338V945.355"
+      stroke="#000000" />
+    <path d="M22.8339 946.022H39.2093V984.036" stroke="#000000" />
+    <path
+      d="M39.2092 984.036H844.332V944.021H863.437V984.036H888V968.03H828.867V958.693H888V27.6767H831.596V17.006H888V1H864.347V40.3481H847.062V1"
+      stroke="#000000" />
+    <path d="M847.061 2.33367H41.0287V38.3472H23.7436V1.66675H1" stroke="#000000" />
+  </svg>
+
   <div class="todo_description_buttons">
     <button (click)="previous()" [ngClass]="animDesc">
       <i class="ph ph-caret-left"></i>

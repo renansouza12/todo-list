@@ -1,11 +1,11 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {FormBuilder, FormsModule, Validators,ReactiveFormsModule } from '@angular/forms';
 import { SharedService } from '../../services/shared.service';
 @Component({
   selector: 'app-todo-input',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule,ReactiveFormsModule],
   templateUrl: './todo-input.component.html',
   styleUrl: './todo-input.component.scss'
 })
@@ -21,7 +21,14 @@ export class TodoInputComponent {
   @Output() eventClose = new EventEmitter<string>();
   @Output() btnDone = new EventEmitter<string>();
 
-  constructor(private service: SharedService) { }
+  private service = inject(SharedService);
+  private formBuilderService = inject(FormBuilder);
+
+  protected form = this.formBuilderService.group({
+    title:['',Validators.required],
+    description:['',Validators.required]
+  })
+
 
   next(): void {
     this.anim = "item";
@@ -46,7 +53,6 @@ export class TodoInputComponent {
     this.title = "";
     this.desc = "";
     this.btnDone.emit();
-
   }
   close(): void {
     this.eventClose.emit();
