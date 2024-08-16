@@ -39,3 +39,9 @@ input, textarea{
     resize: none;
 }
 
+.warn_message{
+    color: var(--Gray);
+    font-weight: bold;
+    position: absolute;
+    top: 30%;
+}

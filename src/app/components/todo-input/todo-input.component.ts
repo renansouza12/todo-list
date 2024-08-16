@@ -10,7 +10,7 @@ import { SharedService } from '../../services/shared.service';
   styleUrl: './todo-input.component.scss'
 })
 export class TodoInputComponent {
-  @Input() title: string = "title";
+  @Input() title!: string;
   desc!: string;
   titleStep: boolean = true;
   descStep!: boolean;

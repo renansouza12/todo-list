@@ -1,12 +1,12 @@
 <div class="todo_title" *ngIf="titleStep">
   <h1 [ngClass]="anim">{{ title }}</h1>
   <form [formGroup]="form"  (submit)="next()">
-    <input [ngClass]="anim" type="text" [(ngModel)]="title" maxlength="15" formControlName="title" />
-    @if(form.controls.title.invalid){
-    <span>title invalid</span>
-    }
-    <button [ngClass]="anim"><i class="ph ph-arrow-circle-right"></i></button>
+    <input [ngClass]="anim" type="text" [(ngModel)]="title" maxlength="15" formControlName="title" placeholder="your title here" />
+    <button [ngClass]="anim"><i class="ph ph-arrow-circle-right" *ngIf="!form.controls.title.invalid"></i></button>
   </form>
+  @if(form.controls.title.invalid){
+    <span class="warn_message">Please enter a title</span>
+  }
 </div>
 <form [formGroup]="form"  class="todo_description" *ngIf="descStep">
   <h2 [ngClass]="animDesc">{{title}}</h2>
@@ -14,12 +14,11 @@
     <p [ngClass]="animDesc">
       Write Below
     </p>
-    <textarea spellcheck="false"  [ngClass]="animDesc" placeholder="..."  [(ngModel)]="desc"
-    formControlName="description"  ></textarea> 
-    @if(form.controls.description.invalid){
-      <span>description invalid</span>
-      }
+    <textarea spellcheck="false"  [ngClass]="animDesc" placeholder="..."  [(ngModel)]="desc" formControlName="description"></textarea> 
   </div>
+  @if(form.controls.description.invalid){
+    <span class="warn_message">Enter a description</span>
+  }
   <svg width="300" height="986" viewBox="0 0 889 986" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M1 1V15.6722H58.3138V28.3436H1V956.026H17.3754H60.1333V968.697H1V984.703H22.8338V945.355"
       stroke="#000000" />
@@ -34,7 +33,7 @@
     <button (click)="previous()" [ngClass]="animDesc">
       <i class="ph ph-caret-left"></i>
     </button>
-    <button (click)="done()" [ngClass]="animDesc">
+    <button (click)="done()" [ngClass]="animDesc" *ngIf="!form.controls.description.invalid">
       Done <i class="ph ph-check"></i>
     </button>
   </div>
