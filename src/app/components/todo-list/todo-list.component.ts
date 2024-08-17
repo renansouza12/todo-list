@@ -23,16 +23,24 @@ export class TodoListComponent {
   private service = inject(SharedService);
   
   ngOnInit(): void {
+    const savedItems = localStorage.getItem('informations');
+    if (savedItems) {
+      this.informations = JSON.parse(savedItems);
+    }
+
     this.service.currentTitle.subscribe(title => this.title = title);
     this.service.currentDescription.subscribe(desc => this.description = desc);
-    this.service.doneEvent.subscribe(() => { this.addInformation(this.title, this.description) });
+    this.service.doneEvent.subscribe(() => { 
+      this.addInformation(this.title, this.description); 
+    });
   }
 
   addInformation(title: string, description: string) {
     if (title && description) {
       const newItem = { title, description };
       this.informations.push(newItem);
-      console.log(this.informations);
+
+      localStorage.setItem("informations",JSON.stringify(this.informations));
     }
   }
 }
