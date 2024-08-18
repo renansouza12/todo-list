@@ -53,7 +53,7 @@ Check out the live demo of the project [here](#).
 
 Below are some screenshots of the application in action:
 
-![Screenshot 1](https://i.ibb.co/ZKBqNNp/localhost-4200.png)  
+![Screenshot 1](https://i.ibb.co/0ZCHQQR/localhost-4200.png)  
 *Description of Screenshot 1*
 
 ![Screenshot 2](https://i.ibb.co/qD2CJ5B/Captura-de-tela-2024-08-18-192705.png)  
