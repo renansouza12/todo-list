@@ -10,7 +10,13 @@
     <input type="checkbox" (click)="toggleChecked()">
     <i class="pi pi-pencil"></i>
 </label>
-<button (click)="btnDelete()"><i class="pi pi-times"></i></button>
+<svg width="32" height="7" viewBox="0 0 32 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path class="path" d="M0 4C6.8 4 18.1667 4 23 4" stroke="#7A7A7A"/>
+    <path class="path" d="M24 6.5L27 1.5" stroke="#7A7A7A"/>
+    <path class="path" d="M28 6L31 1" stroke="#7A7A7A"/>
+    </svg>
+    
+<button (click)="btnDelete()"> <i class="ph ph-x-square"></i></button>
 <div class="check_mark" [ngClass]="{'checked':isChecked}">
     <svg width="4585" height="100" viewBox="0 0 4585 861" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path class="path" d="M4091.5 560L4080.39 555.557C4076.26 553.905 4071.68 553.754 4067.45 555.131L4052.5 560L4042.49 564.337C4039.23 565.75 4035.64 566.22 4032.12 565.693L4024.95 564.617C4020.16 563.899 4015.83 561.385 4012.84 557.586L4006.19 549.147C4005.07 547.723 4003.75 546.467 4002.27 545.417L3966.5 520L3948.04 509.074C3944.14 506.768 3939.55 505.929 3935.09 506.71L3928.38 507.884C3924.43 508.574 3920.42 507.103 3917.85 504.026V504.026C3915.73 501.475 3912.58 500 3909.26 500H3888M3888 500L3884.7 495.6C3881.11 490.816 3875.48 488 3869.5 488H3865.5M3888 500L3879.88 505.622C3876.7 507.821 3872.93 509 3869.06 509H3865.5" stroke="black"/>
