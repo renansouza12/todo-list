@@ -51,6 +51,11 @@ export class TodoListComponent {
     localStorage.setItem("informations", JSON.stringify(this.informations)); 
   }
 
+  deleteCard(index:number):void{
+    console.log("delete clicked ");
+    this.informations.splice(index,1);
+    localStorage.setItem("informations", JSON.stringify(this.informations));    
+  }
 }
 
 

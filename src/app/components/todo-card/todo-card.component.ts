@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -13,6 +13,9 @@ export class TodoCardComponent implements OnInit {
   @Input() title!: string;
   @Input() description!: string;
 
+  @Input() index!: number;
+  @Output() delete = new EventEmitter<number>();
+
   isChecked: boolean = false;
 
   ngOnInit(): void {
@@ -26,6 +29,9 @@ export class TodoCardComponent implements OnInit {
   toggleChecked(): void {
     this.isChecked = !this.isChecked;
     localStorage.setItem(this.title + '_checked', JSON.stringify(this.isChecked));
+  }
 
+  btnDelete(): void {
+    this.delete.emit();
   }
 }

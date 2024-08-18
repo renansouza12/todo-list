@@ -21,9 +21,19 @@
         }
     }
 
+    button{
+        position: absolute;
+        top: 20%;
+        right: 1.5%;
+        z-index: 999;
+        .pi-times{
+            font-size: 12px;
+        }
+    }
+
     .checkbox {
         position: absolute;
-        top: 15%;
+        top: 85%;
         right: 0%;
         transform: translate(-50%, -50%);
         display: inline-flex;
@@ -59,7 +69,7 @@
 
         svg {
             position: absolute;
-            top: -30%;
+            top: -20%;
             right: 0%;
             width: 110%;
             .path {
