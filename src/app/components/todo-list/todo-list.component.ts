@@ -3,11 +3,13 @@ import { DatePipe } from '@angular/common';
 import { TodoCardComponent } from '../todo-card/todo-card.component';
 import { Information } from '../models/information.model';
 import { SharedService } from '../../services/shared.service';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-todo-list',
   standalone: true,
-  imports: [DatePipe, TodoCardComponent],
+  imports: [DatePipe, TodoCardComponent,DragDropModule],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.scss'
 })
@@ -43,6 +45,12 @@ export class TodoListComponent {
       localStorage.setItem("informations",JSON.stringify(this.informations));
     }
   }
+
+  drop(event: CdkDragDrop<Information[]>) {
+    moveItemInArray(this.informations, event.previousIndex, event.currentIndex);
+    localStorage.setItem("informations", JSON.stringify(this.informations)); 
+  }
+
 }
 
 

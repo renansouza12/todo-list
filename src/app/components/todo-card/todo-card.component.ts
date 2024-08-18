@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,14 +8,24 @@ import { CommonModule } from '@angular/common';
   templateUrl: './todo-card.component.html',
   styleUrl: './todo-card.component.scss'
 })
-export class TodoCardComponent {
+export class TodoCardComponent implements OnInit {
 
-@Input() title!:string;
-@Input() description!:string;
+  @Input() title!: string;
+  @Input() description!: string;
 
-isChecked:boolean  = false;
-  
-  toggleChecked():void{
+  isChecked: boolean = false;
+
+  ngOnInit(): void {
+    const savedState = localStorage.getItem(this.title + '_checked');
+    if (savedState !== null) {
+      this.isChecked = JSON.parse(savedState);
+    }
+  }
+
+
+  toggleChecked(): void {
     this.isChecked = !this.isChecked;
+    localStorage.setItem(this.title + '_checked', JSON.stringify(this.isChecked));
+
   }
 }

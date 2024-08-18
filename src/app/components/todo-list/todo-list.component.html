@@ -1,12 +1,13 @@
 <div class="data">
   <p>{{ today | date : "MMMM - dd/MM/yyyy" }}</p>
 </div>
-<div class="cards">
+<div cdkDropList class="cards" (cdkDropListDropped)="drop($event)">
   @for (item of informations ; track item.title) {
-    <app-todo-card
-    [title]="item.title"
-    [description]="item.description"
 
-    />
+  <div  cdkDrag>
+    <div class="custom-placeholder" *cdkDragPlaceholder></div>
+    <app-todo-card [title]="item.title" [description]="item.description" />
+  </div>
+
   }
 </div>

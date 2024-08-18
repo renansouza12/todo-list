@@ -26,6 +26,13 @@
         margin-top: 3rem;
         overflow-y: auto;
         gap: 2rem;
+        user-select: none;
+        
+          .custom-placeholder {
+            background: rgba(149, 149, 149, 0.204);
+            min-height: 60px;
+            transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+          }
     }
    
 }
