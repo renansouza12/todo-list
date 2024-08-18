@@ -1,27 +1,66 @@
-# Todo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
+# 📝  To-Do List
 
-## Development server
+Welcome to the **To-Do List** project! This application helps you keep track of your tasks by allowing you to add, view, and manage your to-do items.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🌟 Features
 
-## Code scaffolding
+- 📅 **Current Date Display**: View the current date at the top of the app.
+- ➕ **Add New Task**: Easily add a new task with a title and a description.
+- 🗂️ **Task Management**: Each task includes a title and a description to help you organize your to-dos.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🚀 Getting Started
 
-## Build
+Follow these instructions to get a copy of the project up and running on your local machine.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Prerequisites
 
-## Running unit tests
+Make sure you have the following installed:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Node.js
+- Angular CLI
 
-## Running end-to-end tests
+### Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/angular-todo-list.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd angular-todo-list
+    ```
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
 
-## Further help
+### Running the Application
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Start the development server:
+
+```bash
+ng serve
+```
+
+Navigate to `http://localhost:4200/` in your browser to view the app.
+
+## 🌐 Live Demo
+
+Check out the live demo of the project [here](#).
+
+## 📸 Screenshots
+
+Below are some screenshots of the application in action:
+
+![Screenshot 1](#)  
+*Description of Screenshot 1*
+
+![Screenshot 2](#)  
+*Description of Screenshot 2*
+
+## 🛠️ Built With
+
+- **Angular**: The framework used for building the application.
+- **TypeScript**: Typed superset of JavaScript that compiles to plain JavaScript.
+
