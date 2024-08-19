@@ -47,7 +47,7 @@ Navigate to `http://localhost:4200/` in your browser to view the app.
 
 ## 🌐 Live Demo
 
-Check out the live demo of the project [here](#).
+Check out the live demo of the project [here](https://todo-list-liard-tau.vercel.app/).
 
 ## 📸 Screenshots
 
