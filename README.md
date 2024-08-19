@@ -54,10 +54,10 @@ Check out the live demo of the project [here](#).
 Below are some screenshots of the application in action:
 
 ![Screenshot 1](https://i.ibb.co/0ZCHQQR/localhost-4200.png)  
-*Description of Screenshot 1*
+*Desktop*
 
 ![Screenshot 2](https://i.ibb.co/qD2CJ5B/Captura-de-tela-2024-08-18-192705.png)  
-*Description of Screenshot 2*
+*Mobile*
 
 ## 🛠️ Built With
 
